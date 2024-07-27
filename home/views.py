@@ -13,9 +13,7 @@ class HomeView(View):
         products = models.Product.objects.filter(available=True)
         categories = models.Category.objects.filter(is_sub=False)
         if category_slug:
-            # use get because filter return query set
             category= models.Category.objects.get(slug=category_slug)
-            # same name with top product
             products = products.filter(category=category)
         return render(request,'home/home.html',{'products':products,'category':categories})
 
