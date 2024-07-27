@@ -155,7 +155,5 @@ AWS_SECRET_ACCESS_KEY = "2cb54006829fc0c66071e2e808938de12dfb763e19a14e737b1dabc
 AWS_S3_ENDPOINT_URL = "https://s3.ir-thr-at1.arvanstorage.ir"
 AWS_STORAGE_BUCKET_NAME = 'django--shop'
 AWS_SERVICE_NAME = 's3'
-# if true , can't send same photos
 AWS_S3_FILE_OVERWRITE = False
-# save download files
 AWS_LOCAL_STORAGE = f'{BASE_DIR}/aws/'
