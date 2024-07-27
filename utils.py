@@ -1,4 +1,4 @@
-# this file is global and for every apps
+
 
 from django.core.exceptions import ValidationError
 from kavenegar import *
