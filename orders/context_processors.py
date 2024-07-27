@@ -1,7 +1,3 @@
-"""
-NOTE:
-    this folder available everywhere
-"""
 
 from .cart import Cart
 
