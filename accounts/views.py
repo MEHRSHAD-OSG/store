@@ -25,10 +25,6 @@ class UserRegisterView(View):
             random_code = random.randint(1000,9999)
             send_otp_code(form.cleaned_data['phone'],random_code)
             models.OtpCode.objects.create(phone_number=form.cleaned_data['phone'],code=random_code)
-            """
-                when create session we want carry user to another view
-                because of that, we must have user info in session or cookie
-            """
             request.session['user_registration_info'] = {
                 'phone_number' : form.cleaned_data['phone'],
                 'email' : form.cleaned_data['email'],
@@ -50,7 +46,6 @@ class UserRegisterVerifyCodeView(View):
     def post(self,request):
         user_session = request.session['user_registration_info']
         form = self.form_class(request.POST)
-        # همون فیلدی که در سشن تریف کردیم
         code_instance = models.OtpCode.objects.get(phone_number=user_session['phone_number'])
         if form.is_valid():
             cd = form.cleaned_data
